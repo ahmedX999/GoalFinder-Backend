@@ -1,9 +1,11 @@
 package ma.project.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Field {
@@ -23,6 +25,19 @@ public class Field {
 	
 	//prix de reservation pour chaque personne
 	private int price_perslot;
+	
+	//Chaque Terrain apartient a un et un seule complexe sportif
+	@ManyToOne(fetch = FetchType.LAZY)
+    private Complex complex;
+	
+	public Complex getComplex() {
+		return complex;
+	}
+
+	public void setComplex(Complex complex) {
+		this.complex = complex;
+	}
+	
 	
 	public Field() {
 		super();
