@@ -3,8 +3,6 @@ package ma.project.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,7 +31,7 @@ public class Complex {
 	
 	//List des terrains d'un complexe sportif
 	@OneToMany(mappedBy = "complex", cascade = CascadeType.ALL, orphanRemoval = true)
-	@JsonIgnore
+	
     private List<Field> fields = new ArrayList<>();
 
 

@@ -1,5 +1,7 @@
 package ma.project.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -28,6 +30,7 @@ public class Field {
 	
 	//Chaque Terrain apartient a un et un seule complexe sportif
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
     private Complex complex;
 	
 	public Complex getComplex() {

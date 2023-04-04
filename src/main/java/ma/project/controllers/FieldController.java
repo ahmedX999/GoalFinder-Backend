@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.project.entities.Field;
-import ma.project.repositories.FieldRepository;
 import ma.project.services.FieldService;
 
 
