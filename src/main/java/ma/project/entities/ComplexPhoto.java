@@ -25,6 +25,22 @@ public class ComplexPhoto {
 
 	
 
+	public String getLogoFilename() {
+		return logoFilename;
+	}
+
+	public void setLogoFilename(String logoFilename) {
+		this.logoFilename = logoFilename;
+	}
+
+	public String getCoverPhotoFilename() {
+		return coverPhotoFilename;
+	}
+
+	public void setCoverPhotoFilename(String coverPhotoFilename) {
+		this.coverPhotoFilename = coverPhotoFilename;
+	}
+
 	public Complex getComplex() {
 		return complex;
 	}
