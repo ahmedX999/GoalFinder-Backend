@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.project.entities.Complex;
+import ma.project.entities.Field;
 import ma.project.services.ComplexService;
 
 @RestController
@@ -35,4 +36,16 @@ public class ComplexController {
 	public void delete(@PathVariable (required = true) int id){
 		complexService.Delete(id);
 	}
+	
+	@GetMapping(value = "/{id}")
+	public Complex findById(@PathVariable (required = true) int id) {
+			return complexService.findById(id);
+		}
+	
+	@PostMapping("/update")
+	public void update(@RequestBody Complex complex) {
+		complexService.Modify(complex);
+	}
+	
+	
 }

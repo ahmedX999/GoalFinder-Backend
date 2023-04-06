@@ -23,13 +23,7 @@ public class ComplexPhoto {
 		this.id = id;
 	}
 
-	public String getFilename() {
-		return filename;
-	}
-
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
+	
 
 	public Complex getComplex() {
 		return complex;
@@ -43,7 +37,8 @@ public class ComplexPhoto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	 private String filename;
+	 private String logoFilename;
+	 private String coverPhotoFilename;
 	 
 	 	@OneToOne
 		@JoinColumn(name = "Complex_id")
