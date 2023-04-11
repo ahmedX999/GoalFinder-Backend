@@ -18,6 +18,18 @@ public class Complex {
     private Long id;
 	
 	private String name;
+	private String photo;
+	private String description;
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
 	private String address;
 	private double laltitude;
 	private double longitude;
@@ -33,6 +45,16 @@ public class Complex {
 	@OneToMany(mappedBy = "complex", cascade = CascadeType.ALL, orphanRemoval = true)
 	
     private List<Field> fields = new ArrayList<>();
+
+
+	public String getPhoto() {
+		return photo;
+	}
+
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 
 
 	public String getAddress() {
