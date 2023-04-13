@@ -18,7 +18,14 @@ public class Field {
 	
     //nom du terrain
 	private String name;
-	
+	private String photo;
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 	//reserve ou non reserve  ou pas valable pour le moment
 	private int state;
 	
