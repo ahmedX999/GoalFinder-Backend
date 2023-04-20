@@ -20,7 +20,11 @@ public class ReservationService implements IDAO<Reservation> {
 	public Reservation Save(Reservation t) {
 		return reservationRepository.save(t);
 	}
-
+    
+	
+	 public List<Reservation> getWaitingReservations() { return
+			  reservationRepository.findByEtat("waiting"); }
+			
 	@Override
 	public void Modify(Reservation t) {
 		

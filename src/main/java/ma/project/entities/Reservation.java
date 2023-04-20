@@ -13,14 +13,32 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+    private String etat;
     // Date de réservation
     private LocalDate reservationDate;
     
     // Heure de réservation
     private LocalTime reservationTime;
     
-    // Nombre de personnes réservées
+    public Reservation() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Reservation(Long id, String etat, LocalDate reservationDate, LocalTime reservationTime, int numberOfPlayers,
+			float totalPrice, Set<Field> fields, User user) {
+		super();
+		this.id = id;
+		this.etat = etat;
+		this.reservationDate = reservationDate;
+		this.reservationTime = reservationTime;
+		this.numberOfPlayers = numberOfPlayers;
+		this.totalPrice = totalPrice;
+		this.fields = fields;
+		this.user = user;
+	}
+
+	// Nombre de personnes réservées
     private int numberOfPlayers;
     
     // Prix total de la réservation
@@ -40,18 +58,7 @@ public class Reservation {
     
     
     //Constructeurs
-    public Reservation() {
-        super();
-    }
-    
-    public Reservation(LocalDate reservationDate, LocalTime reservationTime, int numberOfPlayers, float totalPrice, User user) {
-        super();
-        this.reservationDate = reservationDate;
-        this.reservationTime = reservationTime;
-        this.numberOfPlayers = numberOfPlayers;
-        this.totalPrice = totalPrice;
-        this.user = user;
-    }
+   
 
     // Getters and setters
     
@@ -110,4 +117,12 @@ public class Reservation {
     public void setUser(User user) {
         this.user = user;
     }
+
+	public String getEtat() {
+		return etat;
+	}
+
+	public void setEtat(String etat) {
+		this.etat = etat;
+	}
 }

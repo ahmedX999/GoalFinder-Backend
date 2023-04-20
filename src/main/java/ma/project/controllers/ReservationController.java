@@ -46,7 +46,11 @@ public class ReservationController {
 		reservationService.Modify(reservation);
 	}
 	
-	
+
+	  @GetMapping("/waiting") public List<Reservation> allwaiting(){
+		  return  reservationService.getWaitingReservations();
+	  }
+	 
 	
 
 }
