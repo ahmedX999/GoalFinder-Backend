@@ -10,5 +10,5 @@ public interface ReservationRepository  extends JpaRepository<Reservation, Integ
 
 	Reservation findById(int id);
 	List<Reservation> findAll();
-	
+	 List<Reservation> findByEtat(String etat);
 }
