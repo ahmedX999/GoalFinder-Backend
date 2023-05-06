@@ -1,9 +1,12 @@
 package ma.project.repositories;
 
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import ma.project.entities.Complex;
 import ma.project.entities.Field;
 
 
@@ -12,5 +15,7 @@ import ma.project.entities.Field;
 public interface FieldRepository extends JpaRepository<Field, Integer> {
 
 	Field findById(int id);
+
+	List<Field> findByComplex(Complex complex);
 	
 }
