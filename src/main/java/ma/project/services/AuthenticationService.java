@@ -27,8 +27,8 @@ public class AuthenticationService {
 	  @Autowired
 	  private  JwtService jwtService;	  
 		
-		@Autowired
-		private  AuthenticationManager authenticationManager;
+	@Autowired
+	private  AuthenticationManager authenticationManager;
 		
 		  @Autowired
 		  private PasswordEncoder passwordEncoder;
@@ -44,6 +44,7 @@ public class AuthenticationService {
 	     String jwtToken = jwtService.generateToken(user);
 	    AuthenticationResponse authenticationResponse = new AuthenticationResponse();
 	    authenticationResponse.setToken(jwtToken);
+	    System.out.println(jwtToken);
 	    
 	    return authenticationResponse;
 	}
@@ -57,12 +58,16 @@ public class AuthenticationService {
 			            request.getPassword()
 			        )
 			    );
+		 System.out.println("hello");
 			    var user = repository.findByEmail(request.getEmail())
 			        .orElseThrow();
 			    String jwtToken = jwtService.generateToken(user);
+			    
 			    AuthenticationResponse authenticationResponse = new AuthenticationResponse();
 			    authenticationResponse.setToken(jwtToken);
-			    
+			    System.out.println("hello");
+			    System.out.println(jwtToken);
+			    System.out.println("hello");
 			    return authenticationResponse;
 	}
 
