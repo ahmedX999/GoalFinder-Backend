@@ -34,7 +34,12 @@ public class SecurityConfiguration {
         		"/api/v1/auth/**",
         		"/complexes/**"
         		,"/fields/**"
-        		,"/reservations/**")
+        		,"payments/**"
+        		
+        		,"/reservations/**"
+        		,"/api/v1/auth/authenticate",
+        		"/api/v1/auth/register","/users/**","/roles/**"
+        		)
         .permitAll()
         .anyRequest()
         .authenticated()
